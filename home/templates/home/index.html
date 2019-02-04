@@ -9,24 +9,24 @@
   <!-- og stuff --> 
   <meta property="og:site_name" content="Sparrow"/>
   <meta property="og:title" content="Sparrow"/>
-  <meta property="og:description" content="The simple way to provide employees with seamless leave."/>
+  <meta property="og:description" content="The simplest way to provide employees with seamless extended leave."/>
   <meta property="og:image" content="https://trysparrow.com/images/unsplash/reading.jpg"/>
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@trySparrowHQ"/>
   <meta name="twitter:title" content="Sparrow"/>
-  <meta name="twitter:description" content="The simple way to provide employees with seamless leave." />
+  <meta name="twitter:description" content="The simplest way to provide employees with seamless extended leave." />
   <meta name="twitter:image" content="https://trysparrow.com/images/unsplash/reading.jpg" />
-
+  {% load static %}
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="shortcut icon" href="{% static "home/images/favicon.ico" %}">
 
   <!-- stylesheets -->
-  <link rel="stylesheet" type="text/css" href="dist/theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static "home/dist/theme.min.css" %}" />
 
   <!-- javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="dist/theme.min.js"></script>
+  <script src="{% static "home/dist/theme.min.js" %}"></script>
 </head>
 <body>
   <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" role="navigation">
     <div class="container no-override">
       <a class="navbar-brand" href="index.html">
-	<img src="images/logo.png" class="d-none d-lg-inline mr-2 w-25" />
+		  <img src="{% static "home/images/logo.png" %}" class="d-none d-lg-inline mr-2 w-25" />
         Sparrow
       </a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
@@ -60,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#beta" class="nav-link">
+            <a href="#signup" class="nav-link">
               Try Sparrow  
             </a>
           </li>
@@ -77,13 +77,13 @@
   <div class="business-hero">
     <div class="container">
       <h2 class="customFadeInUp">
-	The simple way to provide employees with seamless leave.
+	The simplest way to provide employees with seamless extended leave.
       </h2>
       <p class="customFadeInUp">
 	We know the details so you don't have to.
       </p>
       <div class="actions customFadeInUp">
-        <a href="#beta" class="btn-pill btn-pill-primary btn-pill-lg">Try Sparrow</a>
+        <a href="#signup" class="btn-pill btn-pill-primary btn-pill-lg">Try Sparrow</a>
       </div>
     </div>
   </div>
@@ -103,8 +103,8 @@
       <div class="row">
         <div class="col-md-6">
           <div class="feature">
-            <img src="images/icons/spacial-devices.png">
-            <h3>
+			  <img src="{% static "home/images/icons/spacial-devices.png" %}">
+			<h3>
               Documentation
             </h3>
             <p>
@@ -114,7 +114,7 @@
         </div>
         <div class="col-md-6">
           <div class="feature">
-            <img src="images/icons/spacial-settings.png">
+			  <img src="{% static "home/images/icons/spacial-settings.png" %}">
             <h3>
               Software
             </h3>
@@ -229,10 +229,10 @@
 
 
 
-  <footer id="beta" class="footer-signup" id="footer">
+  <footer id="signup" class="footer-signup" id="footer">
     <div class="container">
       <h3>
-        Ready to get started?
+        Want to learn more?
       </h3>
       <p>
         Sign up for more information. 
