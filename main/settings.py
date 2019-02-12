@@ -25,7 +25,7 @@ SECRET_KEY = 'f6%^g6v+7dlgpx0giz4wgcc^80w1_#sl)lmd(ti4$+sy%+)+zi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv.list('DJANGO_ALLOWED_HOSTS', default=[os.getenv('RENDER_APP_HOSTNAME', default='')])
 
 
 # Application definition
@@ -125,18 +125,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# Overwrite values if in production
-if os.environ.get('PRODUCTION') == 'True':
-    # Ensure production variables are set
-    try:
-        # Django secret key
-        SECRET_KEY = os.environ['SECRET_KEY']
-        # Database connection
-        DATABASES['default']['NAME'] = os.environ['DB_NAME']
-        DATABASES['default']['USER'] = os.environ['DB_USER']
-        DATABASES['default']['PASSWORD'] = os.environ['DB_PASSWORD']
-        DATABASES['default']['HOST'] = os.environ['DB_HOST']
-        DATABASES['default']['PORT'] = os.environ['DB_PORT']
-    except KeyError as e:
-        raise KeyError('Failed to load environment production variables: %s' % e)
+# # Overwrite values if in production
+# if os.environ.get('PRODUCTION') == 'True':
+#     # Ensure production variables are set
+#     try:
+#         # Django secret key
+#         SECRET_KEY = os.environ['SECRET_KEY']
+#         # Database connection
+#         DATABASES['default']['NAME'] = os.environ['DB_NAME']
+#         DATABASES['default']['USER'] = os.environ['DB_USER']
+#         DATABASES['default']['PASSWORD'] = os.environ['DB_PASSWORD']
+#         DATABASES['default']['HOST'] = os.environ['DB_HOST']
+#         DATABASES['default']['PORT'] = os.environ['DB_PORT']
+#     except KeyError as e:
+#         raise KeyError('Failed to load environment production variables: %s' % e)
 
