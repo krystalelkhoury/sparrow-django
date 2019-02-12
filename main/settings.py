@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'spdb',
+        'USER': 'spadmin',
+        # 'PASSWORD': 'password',
+        # 'HOST': 'localhost',
+        # 'PORT': '',
     }
 }
 
@@ -119,3 +123,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Overwrite values if in production
+if os.environ.get('PRODUCTION') == 'True':
+    # Ensure production variables are set
+    try:
+        # Django secret key
+        SECRET_KEY = os.environ['SECRET_KEY']
+        # Database connection
+        DATABASES['default']['NAME'] = os.environ['DB_NAME']
+        DATABASES['default']['USER'] = os.environ['DB_USER']
+        DATABASES['default']['PASSWORD'] = os.environ['DB_PASSWORD']
+        DATABASES['default']['HOST'] = os.environ['DB_HOST']
+        DATABASES['default']['PORT'] = os.environ['DB_PORT']
+    except KeyError as e:
+        raise KeyError('Failed to load environment production variables: %s' % e)
+
