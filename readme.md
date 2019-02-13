@@ -16,11 +16,11 @@
 
 
 # OSX dev setup
-$ `source sparrenv/Scripts/activate`
-$ `pip3 install -r requirements.txt`
-$ `brew install postgresql`
-$ `pg_ctl -D /usr/local/var/postgres start`
-$ `createdb spdb`
-$ `createuser spadmin`
-$ `python3 manage.py migrate`
-$ `python3 manage.py runserver`
+$ `source sparrenv/Scripts/activate`  
+$ `pip3 install -r requirements.txt`  
+$ `brew install postgresql`  
+$ `pg_ctl -D /usr/local/var/postgres start`  
+$ `createdb spdb`  
+$ `createuser spadmin`  
+$ `python3 manage.py migrate`  
+$ `python3 manage.py runserver`  
