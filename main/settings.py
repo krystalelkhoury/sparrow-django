@@ -131,6 +131,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Overwrite values if in production
 if os.environ.get('PRODUCTION') == 'True':
     # Ensure production variables are set
+    DEBUG = False
     try:
         # Django secret key
         SECRET_KEY = os.environ['SECRET_KEY']
