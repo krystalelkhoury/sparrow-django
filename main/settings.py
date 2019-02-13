@@ -128,8 +128,8 @@ STATIC_URL = '/static/'
 
 # Random changes
 # Change these to the dashboard and home instead
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
