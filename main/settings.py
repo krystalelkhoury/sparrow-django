@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,12 @@ STATIC_ROOT = os.path.join(os.path.join('home',BASE_DIR),'static')
 
 STATIC_URL = '/static/'
 
+# Random changes
+# Change these to the dashboard and home instead
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # # Overwrite values if in production
 # if os.environ.get('PRODUCTION') == 'True':
