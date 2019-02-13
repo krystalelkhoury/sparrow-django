@@ -125,6 +125,10 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    "home/static/home/",
+]
+
 
 # Overwrite values if in production
 if os.environ.get('PRODUCTION') == 'True':
