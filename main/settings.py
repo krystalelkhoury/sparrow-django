@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'blog',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
+# Random changes
+# Change these to the dashboard and home instead
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+AUTH_USER_MODEL = 'users.CustomUser'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Overwrite values if in production
@@ -144,4 +152,4 @@ if os.environ.get('PRODUCTION') == 'True':
         DATABASES['default']['PORT'] = os.environ['DB_PORT']
     except KeyError as e:
         raise KeyError('Failed to load environment production variables: %s' % e)
-
+        
