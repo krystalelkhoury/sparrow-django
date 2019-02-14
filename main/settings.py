@@ -132,8 +132,8 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 
-AUTH_USER_MODEL = 'users.CustomUser'
 
+AUTH_USER_MODEL = 'users.CustomUser'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Overwrite values if in production
@@ -151,4 +151,4 @@ if os.environ.get('PRODUCTION') == 'True':
         DATABASES['default']['PORT'] = os.environ['DB_PORT']
     except KeyError as e:
         raise KeyError('Failed to load environment production variables: %s' % e)
-
+        
