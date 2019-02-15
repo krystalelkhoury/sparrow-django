@@ -14,7 +14,7 @@
         <main class="login-form col-lg col-xl h-100">
             <div class="row flex-column flex-nowrap align-items-center justify-content-center h-100">
                 <div class="sparrow-logo {{ class }}">
-		  <img src="{% static 'images/sparrow-logo.png' %}" height="60" width="60" />
+		  <img src="{% static 'img/sparrow-logo.png' %}" height="60" width="60" />
 		  <span class="logo-sparrow">Sparrow</span>
 		</div>
                 {% block content %}{% endblock %}
@@ -27,5 +27,5 @@
 {% endblock %}
 
 {% block footer_scripts %}
-<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+<script type="text/javascript" src="{% static 'login.js' %}"></script>
 {% endblock %}
