@@ -1,7 +1,7 @@
+
 {# -*- engine: django -*- #}
 
 {% extends "pages/base/base.html" %}
-{% include "pages/base/macros.html" as macros %}
 
 {% block header_styles %}
 <link href="/static/login.css" rel="stylesheet"/>
@@ -13,7 +13,10 @@
     <div class="row h-100">
         <main class="login-form col-lg col-xl h-100">
             <div class="row flex-column flex-nowrap align-items-center justify-content-center h-100">
-                {{ macros.sparrow_logo() }}
+                <div class="sparrow-logo {{ class }}">
+		  <img src="/static/images/sparrow-logo.png" height="60" width="60" />
+		  <span class="logo-sparrow">Sparrow</span>
+		</div>
                 {% block content %}{% endblock %}
             </div>
         </main>
@@ -24,5 +27,5 @@
 {% endblock %}
 
 {% block footer_scripts %}
-<script type="text/javascript" src="/static/login.js"></script>
+<script type="text/javascript" src="static/js/login.js"></script>
 {% endblock %}

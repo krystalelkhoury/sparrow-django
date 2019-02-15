@@ -1,160 +1,155 @@
-
 {# -*- engine: django -*- #}
 
 {% extends 'pages/login/login_base.html' %}
-{% import 'pages/base/macros.html' as macros %}
 
 {% block content %}
 
-    {% macro title(text='Change This Title') -%}
-        <h2 class="dialog-title">
-            {{ text }}
-        </h2>
-    {%- endmacro %}
-
-
+   
+<h2 class="dialog-title">
+  Sparrow | Get Started 
+</h2>
+   
     <!-- Content -->
     {% if path == "start" %}
         <div class="login-heading">
-            <h1>Software enabling companies to provide employees with leave</h1>
+            <h1>The simplest way to provide employees with leave</h1>
         </div>
     {% endif %}
 
     <div class="dialog">
-        {% set form_class = "river" %}
-
-        {% if path == "login" %}
-
-            {{ title(text='Log In')  }}
-
+      <title>
+        'Log In'
+      </title>
             <form
-                class="{{ form_class }}"
+                class="river"
                 method="POST"
                 autocomplete="on"
-                action={{ form_submit_endpoint|default("/login", true) }}>
+                action="/login">
 
-                {{ macros.input(type='email', name='email', placeholder='Email', icon='envelope')  }}
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+		  <input
+                     type="email"
+                     class="form-control"
+                     name="email"
+                     id=""
+                     placeholder="Email"
+		     >
+		</div>
+	      </div>
 
-                {{ macros.input(type='password', name='password', placeholder='Password', icon='key')  }}
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </div>
+		  
+		  <input
+                     type="password"
+                     class="form-control"
+                     name="password"
+                     id=""
+                     placeholder="Password"
+		     >
+		</div>
+	      </div>
 
-                <div class="remember-form">
-                    {% call macros.checkbox(name="remember") %}
-                        Remember me
-                    {% endcall %}
-                    <a href="#">Forgot Password?</a>
-                </div>
+	      <!--#
+              <div class="remember-form">
+	        {#% call macros.checkbox(name="remember") %#}
+	        Remember me
+	        {#% endcall %#}
+	        <a href="#">Forgot Password?</a>
+	      </div> #-->
+	 
+	  <button
+	     type="submit"
+	     id=""
+	     class="sparrow-button sparrow-w-100"
+	     >
+	    Log In
+	  </button>
 
-                {% call macros.button(class="w-100") %}
-                    Log In
-                {% endcall %}
-
-                <span class="dialog-footnote d-flex justify-content-center">
-                    Don't have an account? <a href="#">Sign Up</a>
-                </span>
+          
+          <span class="dialog-footnote d-flex justify-content-center">
+            Don't have an account? <a href={% url 'signup'  %}>Sign Up</a>
+          </span>
             </form>
 
-        {% elif path == "signup" %}
+<!--         {#% elif path == "select" %#} -->
 
-            {{ title(text='Create your account')  }}
+<!--             {#{ title(text='Access to:')  }#} -->
 
-            <form
-                class="{{ form_class }}"
-                method="POST"
-                autocomplete="on"
-                action="/signup">
+<!--             <form -->
+<!--                 class="{{ form_class }}" -->
+<!--                 method="POST" -->
+<!--                 autocomplete="on" -->
+<!--                 action={#{ form_submit_endpoint|default("/login", true) }#}> -->
 
-                {{ macros.input(type='email', name='email', placeholder='Email', icon='envelope') }}
+<!--                 <a href="/login" class="sparrow-button sparrow-secondary"> -->
+<!--                     Employee Dashboard -->
+<!--                 </a> -->
+<!--                 <a href="login" class="sparrow-button sparrow-primary"> -->
+<!--                     Admin Dashboard -->
+<!--                 </a> -->
+<!--             </form> -->
+<!--         {#% elif path == "forgot_pass" %#} -->
 
-                {{ macros.input(type='password', name='password', placeholder='Password', icon='key') }}
+<!--             {#{ title(text='Forgot Password?')  }#} -->
 
-                {{ macros.input(type='password', name='confirm_password', placeholder='Confirm Password', icon='key') }}
-                {% call macros.select(name='status', placeholder='Status', required=True, icon='user') %}
-                    <option value="full-time">Full Time</option>
-                    <option value="contractor">Contractor</option>
-                {% endcall %}
+<!--             <span class="dialog-subtitle">Enter the e-mail you use and we will send you a link for changing your password.</span> -->
 
-                <div class="remember-form justify-content-center">
-                    {% call macros.checkbox(name="remember") %}
-                        I agree to the <a href="">Terms of Service</a>
-                    {% endcall %}
-                </div>
+<!--             <form -->
+<!--                 class="{{ form_class }}" -->
+<!--                 method="POST" -->
+<!--                 autocomplete="on" -->
+<!--                 action={#{ form_submit_endpoint|default("/login", true) }#}> -->
 
-                {% call macros.button(class="w-100") %}
-                    Register
-                {% endcall %}
+<!--                 {#{ macros.input(type='email', name='email', placeholder='Email', icon='envelope')  }#} -->
 
-                <span class="dialog-footnote d-flex justify-content-center">
-                    Already have an account? <a href="#">Log In</a>
-                </span>
+<!--                 {#% call macros.button(class="w-100") %#} -->
+<!--                     Reset Password -->
+<!--                 {#% endcall %#} -->
 
-            </form>
-        {% elif path == "select" %}
+<!--             </form> -->
+<!--         {#% elif path == "reset_pass" %#} -->
 
-            {{ title(text='Access to:')  }}
+<!--             <title>Change your password</title> -->
 
-            <form
-                class="{{ form_class }}"
-                method="POST"
-                autocomplete="on"
-                action={{ form_submit_endpoint|default("/login", true) }}>
+<!--             <form -->
+<!--                 class="{{ form_class }}" -->
+<!--                 method="POST" -->
+<!--                 autocomplete="on" -->
+<!--                 action={#{ form_submit_endpoint|default("/login", true) }#}> -->
 
-                <a href="/login" class="sparrow-button sparrow-secondary">
-                    Employee Dashboard
-                </a>
-                <a href="login" class="sparrow-button sparrow-primary">
-                    Admin Dashboard
-                </a>
-            </form>
-        {% elif path == "forgot_pass" %}
+<!--                 <\!-- TODO: client side validation password match -\-> -->
+<!--                 {#{ macros.input(type='email', name='email', placeholder='Email', icon='envelope')  }#} -->
 
-            {{ title(text='Forgot Password?')  }}
+<!--                 {#{ macros.input(type='password', name='password', placeholder='Password', icon='key') }#} -->
+<!--                 {#{ macros.input(type='password', name='confirm_password', placeholder='Confirm Password', icon='key') }#} -->
 
-            <span class="dialog-subtitle">Enter the e-mail you use and we will send you a link for changing your password.</span>
+<!--                 {#% call macros.button(class="w-100") %#} -->
+<!--                     Reset Password -->
+<!--                 {#% endcall %#} -->
 
-            <form
-                class="{{ form_class }}"
-                method="POST"
-                autocomplete="on"
-                action={{ form_submit_endpoint|default("/login", true) }}>
+<!--             </form> -->
 
-                {{ macros.input(type='email', name='email', placeholder='Email', icon='envelope')  }}
+<!--         {#% else %#} -->
 
-                {% call macros.button(class="w-100") %}
-                    Reset Password
-                {% endcall %}
+<!--             {#{ title(text="Let's get started now")  }#} -->
 
-            </form>
-        {% elif path == "reset_pass" %}
+<!--             <span class="dialog-subtitle">Or <a href="/signup">create</a> an account if not registered yet</span> -->
 
-            {{ title(text='Change your password:')  }}
-
-            <form
-                class="{{ form_class }}"
-                method="POST"
-                autocomplete="on"
-                action={{ form_submit_endpoint|default("/login", true) }}>
-
-                <!-- TODO: client side validation password match -->
-                {{ macros.input(type='email', name='email', placeholder='Email', icon='envelope')  }}
-
-                {{ macros.input(type='password', name='password', placeholder='Password', icon='key') }}
-                {{ macros.input(type='password', name='confirm_password', placeholder='Confirm Password', icon='key') }}
-
-                {% call macros.button(class="w-100") %}
-                    Reset Password
-                {% endcall %}
-
-            </form>
-
-        {% else %}
-
-            {{ title(text="Let's get started now")  }}
-
-            <span class="dialog-subtitle">Or <a href="/signup">create</a> an account if not registered yet</span>
-
-            <a href="/login" class="sparrow-button sparrow-primary w-50">
-                Log In
-            </a>
-        {% endif %}
-    </div>
-{% endblock %}
+<!--             <a href="/login" class="sparrow-button sparrow-primary w-50"> -->
+<!--                 Log In -->
+<!--             </a> -->
+<!--         {#% endif %#} -->
+<!--     </div> -->
+{% endblock %} 

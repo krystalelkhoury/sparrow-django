@@ -1,0 +1,101 @@
+
+{# -*- engine: django -*- #}
+
+{% extends 'pages/login/login_base.html' %}
+
+{% block content %}
+
+   
+<h2 class="dialog-title">
+  Sparrow | Get Started 
+</h2>
+
+	 
+<title>Create your account</title>
+
+<form
+   class="river"
+   method="POST"
+   autocomplete="on"
+   action="/signup">
+  
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </div>
+      <input
+         type="email"
+         class="form-control"
+         name="email"
+         id=""
+         placeholder="Email"
+		     >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fas fa-key"></i>
+        </span>
+      </div>
+		  
+      <input
+         type="password"
+         class="form-control"
+         name="password"
+         id=""
+         placeholder="Password"
+	 >
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="fas fa-key"></i>
+        </span>
+      </div>
+		  
+      <input
+         type="password"
+         class="form-control"
+         name="confirm_password"
+         id=""
+         placeholder="Confirm Password"
+	 >
+    </div>
+  </div>
+
+              
+  <!-- 		{#% call macros.select(name='status', placeholder='Status', required=True, icon='user') %#} -->
+  <!--                     <option value="employee">Employee</option> -->
+  <!--                     <option value="administrator">Administrator</option> -->
+  <!--                 {#% endcall %#} -->
+  
+  <!--                 <div class="remember-form justify-content-center"> -->
+  <!--                     {#% call macros.checkbox(name="remember") %#} -->
+  <!--                         I agree to the <a href="">Terms of Service</a> -->
+  <!--                     {#% endcall %#} -->
+  <!--                 </div> -->
+
+  <button
+     type="submit"
+     id=""
+     class="sparrow-button sparrow-w-100"
+     >
+    Register
+  </button>
+  
+  <span class="dialog-footnote d-flex justify-content-center">
+    Already have an account? <a href="#">Log In</a>
+  </span>
+  
+</form>
+
+{% endblock %} 
