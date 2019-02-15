@@ -1,28 +1,15 @@
 {# -*- engine: django -*- #}
 
 {% extends "pages/base/base.html" %}
-{% import "pages/base/macros.html" as macros %}
-
-
-{% macro sidebar_item(item_page='dashboard', text='Dashboard', icon='chart-pie') -%}
-<li>
-    <a href="{{ item_page }}"
-        {% if page == item_page %}
-        class="current"
-        {% endif %}
-    >
-        <i class="fas fa-{{ icon }}"></i>
-        {{ text }}
-    </a>
-</li>
-{%- endmacro %}
-
 {% block body %}
 
 <div class="d-flex h-100">
     <div class="sidebar d-flex flex-column align-items-center">
 
-        {{ macros.sparrow_logo() }}
+      <div class="sparrow-logo {{ class }}">
+	<img src="/static/img/sparrow-logo.png" height="60" width="60" />
+	<span class="logo-sparrow">Sparrow</span>
+	</div>
 
         <div class="sidebar-profile d-flex flex-column align-items-center">
             <img alt="your profile picture"
@@ -37,14 +24,32 @@
         <!-- TODO: For the person transforming this HTML into a template.  -->
         <nav class="sidebar-destinations">
             <ol>
-                {{ sidebar_item(item_page='dashboard', text='Dashboard', icon='chart-pie') }}
-                {{ sidebar_item(item_page='tasks', text='Tasks', icon='tasks') }}
+	      <li>
+		<a href="{% url 'dashboard' %}" 
+		   class="current"
+		   >
+		  <i class="fas fa-chart-pie"></i>
+		  Dashboard
+		</a>
+	      </li>
+	      <ol>
+	      <li>
+		<a href="{% url 'dashboard' %}" 
+		   class="current"
+		   >
+		  <i class="fas fa-file-signature"></i>
+		  Tasks
+		</a>
+	      </li>
 
-                {{ sidebar_item(item_page='forms', text='Forms', icon='file-signature') }}
+               <!--  {#{ sidebar_item(item_page='dashboard', text='Dashboard', icon='chart-pie') }#} -->
+<!--                 {#{ sidebar_item(item_page='tasks', text='Tasks', icon='tasks') }#} -->
 
-                {{ sidebar_item(item_page='faq', text='FAQ', icon='question') }}
+<!--                 {#{ sidebar_item(item_page='forms', text='Forms', icon='file-signature') }#} -->
 
-                {{ sidebar_item(item_page='profile', text='Profile', icon='user-edit') }}
+<!--                 {#{ sidebar_item(item_page='faq', text='FAQ', icon='question') }#} -->
+
+<!--                 {#{ sidebar_item(item_page='profile', text='Profile', icon='user-edit') }#} -->
             </ol>
         </nav>
 
@@ -57,16 +62,16 @@
                 {% if page == "dashboard" %}
                     <i class="fas fa-chart-pie"></i>
                     Dashboard
-                {% elif page == "tasks" %}
-                    <i class="fas fa-tasks"></i>
-                    Tasks
+             <!--    {#% elif page == "tasks" %#} -->
+<!--                     <i class="fas fa-tasks"></i> -->
+<!--                     Tasks -->
                 {% elif page == "forms" %}
                     <i class="fas fa-file-signature"></i>
                     Forms
-                {% elif page == "faq" %}
-                    <i class="fas fa-question"></i>
-                    Frequently Asked Questions
-                {% else %}
+               <!--  {#% elif page == "faq" %#} -->
+<!--                     <i class="fas fa-question"></i> -->
+<!--                     Frequently Asked Questions -->
+                {% else %} 
                     <i class="fas fa-user-edit"></i>
                     Profile
                 {% endif %}

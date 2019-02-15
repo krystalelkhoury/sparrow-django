@@ -10,7 +10,7 @@ from .forms import CustomUserCreationForm
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('signup')
     template_name = 'pages/login/signup.html'
 
 class Login(LoginView):
@@ -18,6 +18,11 @@ class Login(LoginView):
     template_name = 'pages/login/login.html'
 
 
-class Dashboard(generic.View):
-    #success_url = reverse_lazy('login')
+class AdminDashboard(generic.View):
+    #success_url = reverse_lazy('dashboard')
     template_name = 'pages/dashboard/dashboard.html'
+
+
+class EmployeeDashboard(generic.View):
+    #success_url = reverse_lazy('login')
+    template_name = 'pages/common/sidebar_template.html'
