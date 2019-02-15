@@ -1,0 +1,25 @@
+
+{# -*- engine: django -*- #}
+
+{% extends 'pages/login/login_base.html' %}
+
+{% block content %}
+
+    <!-- Content -->
+        <div class="login-heading">
+            <h1>Software enabling companies to provide employees with leave</h1>
+        </div>
+
+	<div class="dialog">
+	    <h2 class="dialog-title">
+              Let's get started now
+            </h2>
+
+            <span class="dialog-subtitle">Or <a href="{% url 'signup'  %}">create</a> an account if not registered yet</span>
+
+            <a href="{% url 'login' %}" class="sparrow-button sparrow-primary w-50">
+                Log In
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}

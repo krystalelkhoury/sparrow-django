@@ -1,0 +1,119 @@
+
+{# -*- engine: django -*- #}
+
+{% extends 'pages/login/login_base.html' %}
+
+{% block content %}
+
+    <!-- Content -->
+    <div class="dialog">	  
+    <h2 class="dialog-title">
+      Create your account
+    </h2>
+    
+    <form
+       class="river"
+       method="POST"
+       autocomplete="on"
+       action="/signup/">
+      
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+          
+          <input
+                 type="email"
+                 class="form-control"
+                 name="email"
+                 id=""
+                 placeholder="Email"
+             True
+             >
+        </div>
+          </div>
+          
+          <div class="form-group">
+        <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+          
+          <input
+                 type="password"
+                 class="form-control"
+                 name="password"
+                 id=""
+                 placeholder="Password"
+                 True
+             >
+        </div>
+      </div>
+      
+      <div class="form-group">
+	<div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fas fa-key"></i>
+            </span>
+          </div>
+	  
+	  <input
+             type="password"
+             class="form-control"
+             name="confirm_password"
+             id=""
+             placeholder="Confirm Password"
+             True
+	     >
+	</div>
+      </div>
+      
+      <div class="sparrow-select">
+	<i class="fas fa-user"></i>		
+	<select
+	   id=""
+	   True
+	   >
+	  <option value="" disabled selected hidden>Status</option>
+	  <option value="admin">Administrator</option>
+          <option value="employee">Employee</option>
+	</select>
+      </div>
+
+      <div class="remember-form justify-content-center">
+	<div class="sparrow-checkbox">
+	  <input
+	     type="checkbox"
+	     name="remember"
+	     id=""
+	     True
+	     >
+	  <label for="">
+	    I agree to the <a href="">Terms of Service</a>
+	  </label>
+	</div>
+      </div>
+      
+      <button
+	 type="submit"
+	 id=""
+	 class="sparrow-button sparrow-primary w-100"
+	 >
+	Register
+      </button>
+
+      <span class="dialog-footnote d-flex justify-content-center">
+        Already have an account? <a href="{% url 'login' %}">Log In</a>
+      </span>
+      
+    </form>
+    </div>
+</div>
+{% endblock %}
