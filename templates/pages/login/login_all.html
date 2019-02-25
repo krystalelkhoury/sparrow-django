@@ -1,0 +1,352 @@
+
+{# -*- engine: django -*- #}
+
+{% extends 'pages/login/login_base.html' %}
+
+{% block content %}
+
+    <!-- Content -->
+    {% if path == "start" %}
+        <div class="login-heading">
+            <h1>Software enabling companies to provide employees with leave</h1>
+        </div>
+    {% endif %}
+
+	<div class="dialog">
+	  
+	  {% if path == "login" %}
+	  <h2 class="dialog-title">
+            Log In
+	  </h2>
+	  <form
+             class="river"
+             method="POST"
+             autocomplete="on"
+             action="/login">
+
+	    <div class="form-group">
+	      <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+		
+		<input
+                   type="email"
+                   class="form-control"
+                   name="email"
+                   id=""
+                   placeholder="Email"
+		   True
+		   >
+	      </div>
+	    </div>
+
+	    <div class="form-group">
+	      <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-key"></i>
+                  </span>
+                </div>
+		
+		<input
+                   type="password"
+                   class="form-control"
+                   name="password"
+                   id=""
+                   placeholder="Password"
+                   True 
+		   >
+	      </div>
+	    </div>
+
+            <div class="remember-form">
+	      <div class="sparrow-checkbox">
+		<input
+		   type="checkbox"
+		   name="remember"
+		   id="checkbox-input"
+		   True
+		   >
+		<label for="checkbox-input">
+		  Remember me
+		</label>
+	      </div>
+              <a href="#">Forgot Password?</a>
+            </div>
+	    
+
+	    <button
+	       type="{{ type }}"
+	       id="{{ id }}"
+	       class="sparrow-button sparrow-primary w-100"
+	       >
+	      Log In
+	    </button>
+	    
+            <span class="dialog-footnote d-flex justify-content-center">
+              Don't have an account? <a href="#">Sign Up</a>
+            </span>
+            </form>
+
+          {% elif path == "signup" %}
+
+          <h2 class="dialog-title">
+              Create your account
+          </h2>
+
+          <form
+             class="river"
+             method="POST"
+             autocomplete="on"
+             action="/signup">
+	    
+	    <div class="form-group">
+	      <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  </div>
+		
+		<input
+                   type="email"
+                   class="form-control"
+                   name="email"
+                   id=""
+                   placeholder="Email"
+		   True
+		   >
+		</div>
+	      </div>
+
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </div>
+		  
+		  <input
+                     type="password"
+                     class="form-control"
+                     name="password"
+                     id=""
+                     placeholder="Password"
+                     True
+		     >
+		</div>
+	      </div>
+
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </div>
+
+		  <input
+                     type="password"
+                     class="form-control"
+                     name="confirm_password"
+                     id=""
+                     placeholder="Confirm Password"
+                     True
+		     >
+		</div>
+	      </div>
+
+	      <div class="sparrow-select">
+		<i class="fas fa-user"></i>		
+		<select
+		   id=""
+		   True
+		   >
+		  <option value="" disabled selected hidden>Status</option>
+		  <option value="admin">Administrator</option>
+                  <option value="employee">Employee</option>
+		</select>
+	      </div>
+
+                <div class="remember-form justify-content-center">
+		  <div class="sparrow-checkbox">
+		    <input
+		       type="checkbox"
+		       name="remember"
+		       id=""
+		       True
+		       >
+		    <label for="">
+		        I agree to the <a href="">Terms of Service</a>
+		    </label>
+		  </div>
+                </div>
+
+		<button
+		   type="submit"
+		   id=""
+		   class="sparrow-button sparrow-primary w-100"
+		   >
+		  Register
+		</button>
+
+                <span class="dialog-footnote d-flex justify-content-center">
+                    Already have an account? <a href="#">Log In</a>
+                </span>
+
+            </form>
+        {% elif path == "select" %}
+            <h2 class="dialog-title">
+              Access to:
+            </h2>
+
+            <form
+                class="river"
+                method="POST"
+                autocomplete="on"
+                action="/login">
+
+                <a href="/login" class="sparrow-button sparrow-secondary">
+                    Employee Dashboard
+                </a>
+                <a href="login" class="sparrow-button sparrow-primary">
+                    Admin Dashboard
+                </a>
+            </form>
+        {% elif path == "forgot_pass" %}
+	    <h2 class="dialog-title">
+              Forgot Password?
+            </h2>
+
+            <span class="dialog-subtitle">Enter the e-mail you use and we will send you a link for changing your password.</span>
+
+            <form
+                class="river"
+                method="POST"
+                autocomplete="on"
+                action="/login">
+
+
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+
+		  <input
+                     type="email"
+                     class="form-control"
+                     name="email"
+                     id=""
+                     placeholder="Email"
+		     True
+		     >
+		</div>
+	      </div>
+
+	      <button
+		 type="submit"
+		 id=""
+		 class="sparrow-button sparrow-primary w-100"
+		 >
+                Reset Password
+	      </button>
+
+            </form>
+        {% elif path == "reset_pass" %}
+	    <h2 class="dialog-title">
+              Change your password:
+            </h2>
+
+            <form
+                class="river"
+                method="POST"
+                autocomplete="on"
+                action="/login">
+
+                <!-- TODO: client side validation password match -->
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+
+		  <input
+                     type="email"
+                     class="form-control"
+                     name="email"
+                     id=""
+                     placeholder="Email"
+		     True
+		     >
+		</div>
+	      </div>
+
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </div>
+		  
+		  <input
+                     type="password"
+                     class="form-control"
+                     name="password"
+                     id=""
+                     placeholder="Password"
+                     True
+		     >
+		</div>
+	      </div>
+
+	      <div class="form-group">
+		<div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-key"></i>
+                    </span>
+                  </div>
+
+		  <input
+                     type="password"
+                     class="form-control"
+                     name="confirm_password"
+                     id=""
+                     placeholder="Confirm Password"
+                     True
+		     >
+		</div>
+	      </div>
+	      <button
+		 type="submit"
+		 id=""
+		 class="sparrow-button sparrow-primary w-100"
+		 >
+		Reset Password
+	      </button>
+                
+            </form>
+
+        {% else %}
+	    <h2 class="dialog-title">
+              Let's get started now
+            </h2>
+
+            <span class="dialog-subtitle">Or <a href="/signup">create</a> an account if not registered yet</span>
+
+            <a href="/login" class="sparrow-button sparrow-primary w-50">
+                Log In
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}

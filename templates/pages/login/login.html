@@ -1,0 +1,87 @@
+
+{# -*- engine: django -*- #}
+
+{% extends 'pages/login/login_base.html' %}
+
+{% block content %}
+
+    <!-- Content -->
+	<div class="dialog">	  
+	  <h2 class="dialog-title">
+            Log In
+	  </h2>
+	  <form
+             class="river"
+             method="POST"
+             autocomplete="on"
+             action="/login/">
+
+        {% csrf_token %}
+	    <div class="form-group">
+	      <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+		
+		<input
+                   type="email"
+                   class="form-control"
+                   name="email"
+                   id=""
+                   placeholder="Email"
+		   True
+		   >
+	      </div>
+	    </div>
+
+	    <div class="form-group">
+	      <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-key"></i>
+                  </span>
+                </div>
+		
+		<input
+                   type="password"
+                   class="form-control"
+                   name="password"
+                   id=""
+                   placeholder="Password"
+                   True 
+		   >
+	      </div>
+	    </div>
+
+            <div class="remember-form">
+	      <div class="sparrow-checkbox">
+		<input
+		   type="checkbox"
+		   name="remember"
+		   id="checkbox-input"
+		   True
+		   >
+		<label for="checkbox-input">
+		  Remember me
+		</label>
+	      </div>
+              <a href="{% url 'passwordreset' %}">Forgot Password?</a>
+            </div>
+	    
+
+	    <button
+	       type="submit"
+	       id=""
+	       class="sparrow-button sparrow-primary w-100"
+	       >
+	      Log In
+	    </button>
+	    
+            <span class="dialog-footnote d-flex justify-content-center">
+              Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
+            </span>
+            </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,100 @@
+{# -*- engine: django -*- #}
+
+{% extends "pages/base/base.html" %}
+{% block body %}
+
+<div class="d-flex h-100">
+    <div class="sidebar d-flex flex-column align-items-center">
+
+      <div class="sparrow-logo {{ class }}">
+	<img src="/static/img/sparrow-logo.png" height="60" width="60" />
+	<span class="logo-sparrow">Sparrow</span>
+	</div>
+
+        <div class="sidebar-profile d-flex flex-column align-items-center">
+            <img alt="your profile picture"
+                class="profile-img rounded-circle border border-3 border-primary"
+                width="100"
+                height="100"
+                src="https://0.gravatar.com/avatar/f5348e1061215cf50eb1682b5da444ea?s=400&d=mm"/>
+            <span class="sidebar-profile-name">{{ name }}</span>
+        </div>
+
+
+        <!-- TODO: For the person transforming this HTML into a template.  -->
+        <nav class="sidebar-destinations">
+            <ol>
+	      <li>
+		<a href="{% url 'dashboard' %}" 
+		   class="current"
+		   >
+		  <i class="fas fa-chart-pie"></i>
+		  Dashboard
+		</a>
+	      </li>
+	      <ol>
+	      <li>
+		<a href="{% url 'dashboard' %}" 
+		   class="current"
+		   >
+		  <i class="fas fa-file-signature"></i>
+		  Tasks
+		</a>
+	      </li>
+
+               <!--  {#{ sidebar_item(item_page='dashboard', text='Dashboard', icon='chart-pie') }#} -->
+<!--                 {#{ sidebar_item(item_page='tasks', text='Tasks', icon='tasks') }#} -->
+
+<!--                 {#{ sidebar_item(item_page='forms', text='Forms', icon='file-signature') }#} -->
+
+<!--                 {#{ sidebar_item(item_page='faq', text='FAQ', icon='question') }#} -->
+
+<!--                 {#{ sidebar_item(item_page='profile', text='Profile', icon='user-edit') }#} -->
+            </ol>
+        </nav>
+
+    </div>
+
+    <div class="content d-flex flex-column flex-grow-1">
+        <header class="d-flex justify-content-between">
+            <div class="header-title">
+
+                {% if page == "dashboard" %}
+                    <i class="fas fa-chart-pie"></i>
+                    Dashboard
+             <!--    {#% elif page == "tasks" %#} -->
+<!--                     <i class="fas fa-tasks"></i> -->
+<!--                     Tasks -->
+                {% elif page == "forms" %}
+                    <i class="fas fa-file-signature"></i>
+                    Forms
+               <!--  {#% elif page == "faq" %#} -->
+<!--                     <i class="fas fa-question"></i> -->
+<!--                     Frequently Asked Questions -->
+                {% else %} 
+                    <i class="fas fa-user-edit"></i>
+                    Profile
+                {% endif %}
+            </div>
+
+            <div class="header-action">
+                <a href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </header>
+
+        <!--
+             Setting height of flex so main has a height.
+             Setting main to be a flexbox so that the wrapper extends full height within our margins
+        -->
+        <main class="d-flex flex-column flex-grow-1">
+            <div class="wrapper container-fluid">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
+
+</div>
+{% endblock %}
