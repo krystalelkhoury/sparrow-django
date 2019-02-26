@@ -2,6 +2,7 @@
 `source sparrenv/bin/activate`
 
 ## Run server
+`python manage.py collectstatic`
 `python manage.py runserver`
 
 ## Install Postgres 
