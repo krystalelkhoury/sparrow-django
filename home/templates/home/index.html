@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
 <head>
-  {% load static %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sparrow</title>
@@ -40,8 +39,8 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" role="navigation">
     <div class="container no-override">
-      <a class="navbar-brand" href="index.html">
-		  <img src="{% static "home/images/logo.png" %}" class="d-none d-lg-inline mr-2 w-25" />
+      <a class="navbar-brand" href="">
+	<img src="{% static "home/images/logo.png" %}" class="d-none d-lg-inline mr-2 w-25" />
         Sparrow
       </a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,27 +53,17 @@
             <a href="#product" class="nav-link">
               Product
             </a>
-          </li>
-          <li class="nav-item active">
-            <a href="{% url 'blog' %}" class="nav-link">
-            Blog
-          </a>
-          </li>
-          <li class="nav-item">
-            <a href="#team" class="nav-link">
-              Team
-            </a>
-          </li>
+          </li> 
           <li class="nav-item">
             <a href="#signup" class="nav-link">
               Try Sparrow  
             </a>
           </li>
-         <!--  <li class="nav-item"> -->
-<!--             <a class="nav-link" href="careers.html"> -->
-<!-- 	      Careers -->
-<!-- 	    </a> -->
-<!--           </li> -->
+          <li class="nav-item active">
+            <a href="{% url 'blog' %}" class="nav-link">
+              Blog
+            </a>
+          </li
         </ul>
       </div>
     </div>
@@ -83,10 +72,10 @@
   <div class="business-hero">
     <div class="container">
       <h2 class="customFadeInUp">
-	The simplest way to provide employees with seamless extended leave.
+	Sparrow takes care of employee leave, so you don't have to. 
       </h2>
       <p class="customFadeInUp">
-	We know the details so you don't have to.
+	We handle all leave-related paperwork. 
       </p>
       <div class="actions customFadeInUp">
         <a href="#signup" class="btn-pill btn-pill-primary btn-pill-lg">Try Sparrow</a>
@@ -99,79 +88,79 @@
       <div class="row">
         <div class="col-12">
           <div class="header">
-            <h2>Product</h2>
-            <p>
-              Employees with access to adequate leave are 91% more likely to work for that company one year later.  Sparrow acts as the employee’s guide throughout the process, easing the transition as employees prepare to go on leave and as they prepare to return to work. 
-            </p>
+            <h2>Whether you have 5 employees or 50,000, we provide a modern solution that:</h2>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="feature">
-			  <img src="{% static "home/images/icons/spacial-devices.png" %}">
-			<h3>
-              Documentation
+	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-calendar"></span>
+	    <h3>
+              Saves Time 
             </h3>
             <p>
-              We provide you with a quick, reliable website that covers everything your employee should expect when taking family leave. This covers: short term disability paperwork, legal matters, salary verification, and more.  
+              Your time is valuable. Managing just one leave requires 20-40 hours spent on paperwork, compliance, payroll, and employee support, which  translates to 200 hours of employee time spent on tedious paperwork per 100 employees. Let Sparrow take care of the painstaking details so your team can focus on your business. 
             </p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="feature">
-			  <img src="{% static "home/images/icons/spacial-settings.png" %}">
+	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-wallet"></span>
             <h3>
-              Software
+              Saves Money
             </h3>
             <p>
-	      Our software files necessary paperwork for you, tracks deadlines, and ensures you have what you need so you and your employees can focus on more important things. 
-            </p>
+	      We make sure that your team gets the maximum possible benefits, while also managing your labor cost. Outsourcing employee leave to Sparrow can save your team as much as $10K in labor costs per 100 employees.
+	    </p> 
+	    <p>
+	      For many companies, using Sparrow can also save you up to $20K of each employee’s salary through proper compliance and adherence to filing nuances.
+	    </p>
           </div>
         </div>
+	<div class="col-md-4">
+          <div class="feature">
+	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-global"></span>		
+            <h3>
+              Saves Headache
+            </h3>
+	    <p>
+	      We create a personalized payroll plan for each employee’s unique circumstances.
+	    </p>
+	    <p>
+	      We ensure your leave policy complies with state regulations. We file all of the necessary paperwork with the EDD for each employee. 
+	    </p>
+	    <p>
+	      Several studies show that adequate leave increases employee retention. We ensure your employee doesn’t need to choose between the people they love and the job they love.
+            </p>
+          </div>
+	</div>
+	<div class="col-12">
+	  <div class="header">
+	    <p>
+
+	    </p>
+	   <h4>Sparrow is the simplest way to provide leave regardless of your company size</h4>
+	  </div>
+	</div>
       </div>
     </section>
   </div>
-  <div class="index-features" data-scroll>
+
+<div class="index-features" data-scroll>
     <div class="container">
+      <header>
+        <h3>Sparrow is the easiest software-based service for you and your employees</h3>
+	<p>
+	  Sparrow's centralized dashboard captures employees' unique needs.
+	</p>
+      </header>    
       <section class="features">
         <div class="row">
-          <div class="col-md-4 feature">
-	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-calendar"></span>
-            <!-- <img src="images/icons/features-icon-ok.png" class="icon" /> -->
-            <section>
-              <h4>
-                Save Time 
-              </h4>
-              <p>
-		Your time is valuable.  Given some basic information about your employee, we tell you what to expect as your employee's leave begins, what you are legally required to provide, and  how much you can expect it to cost. You’ll spend less time filing paperwork and less time with lawyers. 
-              </p>
-            </section>
+          <div class="col-md-12 feature">
+            <img src="{% static 'home/images/unsplash/sparrow-admin-dashboard.png' %}" class="devices" />
           </div>
-          <div class="col-md-4 feature">
-	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-wallet"></span>
-            <!-- <img src="images/icons/features-icon-canvas.png" class="icon" /> -->
-            <section>
-              <h4>
-                Save Money
-              </h4>
-              <p>
-                We can help save you up to 70% of your employee’s salary through proper compliance and adherence to filing nuances. We know all the specifics so you don’t have to. 
-              </p>
-            </section>
-          </div>
-          <div class="col-md-4 feature">
-	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-global"></span>
-            <!-- <img src="images/icons/features-icon-world.png" class="icon" /> -->
-            <section>
-              <h4>
-                Prevent employee churn 
-              </h>
-              <p>
-                Several studies have shown the importance of adequate leave for employee retention. Don’t make your employees choose between the people they love and the job they love. We help you obtain the resources you need to not force them to choose.
-              </p>
-            </section>
-          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -237,13 +226,13 @@
 
   <footer id="signup" class="footer-signup" id="footer">
     <div class="container">
-      <h3>
-        Want to learn more?
-      </h3>
-      <p>
-        Sign up for more information. 
-      </p>
-
+	<h3>
+          Want to learn how Sparrow can <br/>
+	  transform your leave experience? 
+	</h3>
+	<p>
+          Get in touch! 
+	</p>
 
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
@@ -280,7 +269,7 @@
         © Sparrow 2019
       </span>
       <a href="#product">Product</a>
-      <a href="#team">Team</a>
+      <a href="/blog/">Blog</a>
 <!--       <a href="careers.html">Careers</a> -->
     </div>
   </div>
