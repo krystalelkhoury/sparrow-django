@@ -8,3 +8,9 @@ def index(request):
 
 def introducingsparrow(request):
     return render(request, 'blog/introducing-sparrow.html')
+
+def ideocollab(request):
+    return render(request, 'blog/ideo-collab.html')
+
+def mothersroom(request):
+    return render(request, 'blog/mothers-room.html')
