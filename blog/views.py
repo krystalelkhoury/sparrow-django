@@ -12,5 +12,5 @@ def introducingsparrow(request):
 def ideocollab(request):
     return render(request, 'blog/ideo-collab.html')
 
-def mothersroom(request):
-    return render(request, 'blog/mothers-room.html')
+# def mothersroom(request):
+#     return render(request, 'blog/mothers-room.html')
