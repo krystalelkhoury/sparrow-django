@@ -6,7 +6,7 @@
   <title>Sparrow</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- og stuff --> 
+  <!-- og stuff -->
   <meta property="og:site_name" content="Sparrow"/>
   <meta property="og:title" content="Sparrow"/>
   <meta property="og:description" content="The simplest way to provide employees with seamless extended leave."/>
@@ -23,6 +23,7 @@
 
   <!-- stylesheets -->
   <link rel="stylesheet" type="text/css" href="{% static "home/dist/theme.min.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "home/sparrow-overrides.css" %}" />
 
   <!-- javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -53,10 +54,10 @@
             <a href="#product" class="nav-link">
               Product
             </a>
-          </li> 
+          </li>
           <li class="nav-item">
             <a href="#signup" class="nav-link">
-              Try Sparrow  
+              Try Sparrow
             </a>
           </li>
           <li class="nav-item active">
@@ -72,11 +73,30 @@
   <div class="business-hero">
     <div class="container">
       <h2 class="customFadeInUp">
-	Sparrow takes care of employee leave, so you don't have to. 
+	Sparrow takes care of employee leave, so you don't have to.
       </h2>
-      <p class="customFadeInUp">
-	We handle all leave-related paperwork. 
-      </p>
+      <!-- <p class="customFadeInUp">
+	We handle all leave-related paperwork.
+      </p> -->
+
+      <!-- Start landing page text animation -->
+      <div class="content">
+        <div class="content__container">
+          <p class="content__container__text">
+            We take handle all leave-related
+          </p>
+
+          <ul class="content__container__list">
+            <li class="content__container__list__item">paperwork</li>
+            <li class="content__container__list__item">coordination</li>
+            <li class="content__container__list__item">deadlines</li>
+            <li class="content__container__list__item">calculations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- End landing page text animation -->
+
       <div class="actions customFadeInUp">
         <a href="#signup" class="btn-pill btn-pill-primary btn-pill-lg">Try Sparrow</a>
       </div>
@@ -97,10 +117,10 @@
           <div class="feature">
 	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-calendar"></span>
 	    <h3>
-              Saves Time 
+              Saves Time
             </h3>
             <p>
-              Your time is valuable. Managing just one leave requires 20-40 hours spent on paperwork, compliance, payroll, and employee support, which  translates to 200 hours of employee time spent on tedious paperwork per 100 employees. Let Sparrow take care of the painstaking details so your team can focus on your business. 
+              Your time is valuable. Managing just one leave requires 20-40 hours spent on paperwork, compliance, payroll, and employee support, which  translates to 200 hours of employee time spent on tedious paperwork per 100 employees. Let Sparrow take care of the painstaking details so your team can focus on your business.
             </p>
           </div>
         </div>
@@ -112,7 +132,7 @@
             </h3>
             <p>
 	      We make sure that your team gets the maximum possible benefits, while also managing your labor cost. Outsourcing employee leave to Sparrow can save your team as much as $10K in labor costs per 100 employees.
-	    </p> 
+	    </p>
 	    <p>
 	      For many companies, using Sparrow can also save you up to $20K of each employee’s salary through proper compliance and adherence to filing nuances.
 	    </p>
@@ -120,7 +140,7 @@
         </div>
 	<div class="col-md-4">
           <div class="feature">
-	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-global"></span>		
+	    <span style='color:#33aaff;font-weight:1000;font-size:200%;' class="icon icon-global"></span>
             <h3>
               Saves Headache
             </h3>
@@ -128,7 +148,7 @@
 	      We create a personalized payroll plan for each employee’s unique circumstances.
 	    </p>
 	    <p>
-	      We ensure your leave policy complies with state regulations. We file all of the necessary paperwork with the EDD for each employee. 
+	      We ensure your leave policy complies with state regulations. We file all of the necessary paperwork with the EDD for each employee.
 	    </p>
 	    <p>
 	      Several studies show that adequate leave increases employee retention. We ensure your employee doesn’t need to choose between the people they love and the job they love.
@@ -154,7 +174,7 @@
 	<p>
 	  Sparrow's centralized dashboard captures employees' unique needs.
 	</p>
-      </header>    
+      </header>
       <section class="features">
         <div class="row">
           <div class="col-md-12 feature">
@@ -231,10 +251,10 @@
     <div class="container">
 	<h3>
           Want to learn how Sparrow can <br/>
-	  transform your leave experience? 
+	  transform your leave experience?
 	</h3>
 	<p>
-          Get in touch! 
+          Get in touch!
 	</p>
 
       <!-- Begin MailChimp Signup Form -->
@@ -265,7 +285,7 @@
       <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='COMPANY';ftypes[6]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
       <!--End mc_embed_signup-->
   </footer>
-  
+
   <div class="footer-light">
     <div class="container">
       <span>
@@ -276,7 +296,7 @@
 <!--       <a href="careers.html">Careers</a> -->
     </div>
   </div>
-  
+
 
   <script type="text/javascript">
     $(function () {
@@ -306,4 +326,3 @@ ga('send', 'pageview');
 <!-- End Google Analytics -->
 </body>
 </html>
-
