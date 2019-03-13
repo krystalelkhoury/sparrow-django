@@ -67,21 +67,17 @@ $ `git clone https://github.com/trysparrow/sparrow-django.git`
 ## Set up your Sparrow virtual environment
 A virtual environment is an environment that keeps all the tools and packages in a given place.  It’s a tool that creates an isolated Python environment for each of your projects. It’s best to install projects in an isolated folder instead of installing packages globally.
 
-### Install virtualenv
+### Install virtualenv, and create your sparrow virutal environment
 $ `pip3 install virtualenv`
 $ `cd sparrow-django`
 $ `rm -rf sparrenv`
 $ `virtualenv sparrenv`
 
 ## Activate virtualenv
-Whenever you are working on sparrow-django, you should have your virtual environment (e.g. sparrenv) activated.
+Whenever you are working on sparrow-django, you should have your virtual environment (e.g. sparrenv) activated
 $ `source sparrenv/bin/activate`
-### In your Sparrow virtual environment [with zsh, your location should look like: (sparrenv) ➜  sparrow-django git:](master)
+### In your Sparrow virtual environment, run the following
 $ `pip3 install -r requirements.txt`
-
-### Install the python packages necessary to run the server locally
-sparrow-django git:(master) ✗ pip3 install -r requirements.txt (run this command in and outside of the virtualenv?)
-
 
 ## Setup a local database using Postgresql
 PostgresSQL is a popular relational database.
