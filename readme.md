@@ -3,7 +3,8 @@ We’re excited to have you and hope you’ll find this guide helpful.
 
 This repo is a WIP. In fact, if you think of ways we can improve this document, that can be your first pull request!
 
-## What is Sparrow? <link to about us>
+## What is Sparrow? 
+Sparrow provides a software based service that handles all leave-related paperwork, coordination, calculation and headache. We're a team that believes no one should choose between the people they love and the job they love. It's our mission to make it possible for more people to balance work and family. 
 
 ## Getting Help
 -Slack: Ping any of the team members @trysparrow.slack.com
@@ -115,13 +116,26 @@ $ `python3 manage.py runserver`
 ## Contributing Code
 All our code is housed on Github so we make contributions through PRs. If you’re new to Git, here’s a tutorial on basic git commands https://18f.gsa.gov/2015/03/03/how-to-use-github-and-the-terminal-a-guide/
 
-Here’s a step-by-step example:
-<insert a little more detail>
-### Update your branch
+###Here’s a step-by-step example for contributing to our landing page:
+#### Work needs to be done. Let's create a new branch and go from here.
+$ `git checkout -b <new-branch-name>`
+#### We've written code! Let's check if it looks good locally at localhost:8000
+$ `source sparrenv/bin/activate`
+$ `python3 manage.py runserver`
+#### Looking good. Push to origin
+$ `git add <changed-files-names>`
+$ `git commit -m "<short-description-of-your-code>"`
+$ `git push origin <new-branch-name>`
+#### Make a PR on Github
+Wait for the team to review your changes. They say it's ready to ship. Merge to master.
+#### Check on Render
+When we merge the PR to master, our changes aren't in production yet. They're sitting on our test server at sptest.onrender.com. We double check your changes one more time. If it's good to go, we manually deploy into production. Yay!  
+###A few more helpful commands
+#### Update your branch
 $ `git status`
-### to untrack a file 
+#### to untrack a file 
 $ `git rm -r FILENAME`
-### to track a file 
+#### to track a file 
 $ `fit add FILENAME` 
 $ `git commit -m “DESCRIPTIVE COMMIT MESSAGE”`
 
@@ -132,5 +146,3 @@ Most engineers use VS Code but feel free to use atom, sublime text, vim, emacs, 
 This is all to taste, but a few (wink wink) of us put all our version-controlled projects in ~/Documents. 
 
 ## Code away, contribute, and see live updates!
-
-
