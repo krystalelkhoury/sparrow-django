@@ -8,3 +8,6 @@ def index(request):
 
 def introducingsparrow(request):
     return render(request, 'blog/introducing-sparrow.html')
+
+def sparrowideocollaboration(request):
+    return render(request, 'blog/sparrow-ideo-collaboration.html')
