@@ -106,15 +106,19 @@ $ `python3 manage.py runserver`
 All our code is housed on Github so we make contributions through PRs. If you’re new to Git, here’s a tutorial on basic git commands https://18f.gsa.gov/2015/03/03/how-to-use-github-and-the-terminal-a-guide/
 
 ### Here’s a step-by-step example for contributing to our landing page:
+
 #### Work needs to be done. Let's create a new branch and go from here.
 $ `git checkout -b <new-branch-name>`
+
 #### We've written code! Let's check if it looks good locally at localhost:8000
 $ `source sparrenv/bin/activate`
 $ `python3 manage.py runserver`
+
 #### Looking good. Push to origin
 $ `git add <changed-files-names>`
 $ `git commit -m "<short-description-of-your-code>"`
 $ `git push origin <new-branch-name>`
+
 #### Make a PR on Github
 Wait for the team to review your changes. They say it's ready to ship. Merge to master.
 #### Check on Render
