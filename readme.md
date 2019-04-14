@@ -27,6 +27,7 @@ Package managers make it easy-peasy to install and update applications or librar
 We can install Homebrew by copy-pasta-ing this command inside the terminal:
 
 ### Install package manager [Homebrew](https://brew.sh/)  
+
 $ `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”`
 
 Follow the steps on the screen. You’ll be prompted for your username and password.
@@ -49,11 +50,15 @@ $ `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/
 OSX comes with a pre-installed version of Git.
 
 Let’s define your Git user (this should be the same name and email you use for Github)
+
 git config --global user.name "Your Name Here"
+
 git config --global user.email "your_email@youremail.com"
-Python
+
+## Python
 
 ### Install python 3
+
 $ `brew install python`
 
 ### Pip
@@ -68,14 +73,21 @@ $ `git clone https://github.com/trysparrow/sparrow-django.git`
 A virtual environment is an environment that keeps all the tools and packages in a given place.  It’s a tool that creates an isolated Python environment for each of your projects. It’s best to install projects in an isolated folder instead of installing packages globally.
 
 ### Install virtualenv, and create your sparrow virutal environment
+
 $ `pip3 install virtualenv`
+
 $ `cd sparrow-django`
+
 $ `rm -rf sparrenv`
+
 $ `virtualenv sparrenv`
 
 ## Activate virtualenv
+
 Whenever you are working on sparrow-django, you should have your virtual environment (e.g. sparrenv) activated
+
 $ `source sparrenv/bin/activate`
+
 ### In your Sparrow virtual environment, run the following
 $ `pip3 install -r requirements.txt`
 
@@ -91,14 +103,18 @@ $ `pg_ctl -D /usr/local/var/postgres start`
 ### Create new PostgreSQL DB & Local user
 Note: you should only need to do this once.
 [Reference Tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04)
+
 $ `createdb spdb`
+
 $ `createuser spadmin`
 
 ## Preparing to run the server
 ### Migrate the database (only necessary if you change the database)
 $ `python3 manage.py migrate`  
+
 ### Update static files
 $ `python3 manage.py collectstatic`  
+
 ### Run the server
 $ `python3 manage.py runserver`  
 
@@ -111,25 +127,36 @@ All our code is housed on Github so we make contributions through PRs. If you’
 $ `git checkout -b <new-branch-name>`
 
 #### We've written code! Let's check if it looks good locally at localhost:8000
+
 $ `source sparrenv/bin/activate`
+
 $ `python3 manage.py runserver`
 
 #### Looking good. Push to origin
+
 $ `git add <changed-files-names>`
+
 $ `git commit -m "<short-description-of-your-code>"`
+
 $ `git push origin <new-branch-name>`
 
 #### Make a PR on Github
+
 Wait for the team to review your changes. They say it's ready to ship. Merge to master.
+
 #### Check on Render
 When we merge the PR to master, our changes aren't in production yet. They're sitting on our test server at sptest.onrender.com. We double check your changes one more time. If it's good to go, we manually deploy into production. Yay!  
 ### A few more helpful commands
 #### Update your branch
 $ `git status`
+
 #### to untrack a file
 $ `git rm -r FILENAME`
+
 #### to track a file
+
 $ `fit add FILENAME`
+
 $ `git commit -m “DESCRIPTIVE COMMIT MESSAGE”`
 
 ## Text Editors
