@@ -28,7 +28,7 @@ We can install Homebrew by copy-pasta-ing this command inside the terminal:
 
 ### Install package manager [Homebrew](https://brew.sh/)  
 
-$ `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”`
+$ `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Follow the steps on the screen. You’ll be prompted for your username and password.
 
@@ -43,7 +43,7 @@ $ `brew install zsh`
 
 Oh my zsh is a *delightful* framework that adds functionality to your terminal that can make you faster and more productive. Quoting Robby Russell, oh my zsh comes with a *shitload* of plugins. It spices up your terminal with colors for your status, branch and diff Git commands, as well as a couple aliases. If you have another framework you prefer, that’s ok, but if your alternative is the raw terminal, you should install this.
 
-$ `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)”`
+$ `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
 
 ### Git
